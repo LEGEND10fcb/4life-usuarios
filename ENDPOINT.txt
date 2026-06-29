@@ -1,0 +1,40 @@
+ENDPOINTS - Servicio de Autenticación
+
+Servidor base: http://localhost:3001
+
+
+1. REGISTRO DE USUARIO
+
+Metodo: POST
+Endpoint: /registro
+URL completa: http://localhost:3001/registro
+
+Body (JSON):
+{
+    "usuario": "nombre_usuario",
+    "contrasena": "contrasena"
+}
+
+Respuestas posibles:
+- 200 OK -> "Usuario registrado con éxito"
+- 400 Bad Request -> "Usuario y contraseña son obligatorios"
+- 409 Conflict -> "Ese usuario ya existe"
+
+
+
+2. INICIO DE SESION
+
+Metodo: POST
+Endpoint: /login
+URL completa: http://localhost:3001/login
+
+Body (JSON):
+{
+    "usuario": "nombre_usuario",
+    "contrasena": "contrasena"
+}
+
+Respuestas posibles:
+- 200 OK -> "Autenticación satisfactoria"
+- 400 Bad Request -> "Usuario y contraseña son obligatorios"
+- 401 Unauthorized -> "Error en la autenticación"

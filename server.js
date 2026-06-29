@@ -10,7 +10,7 @@ const conexion = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: '4life_proyecto',   // ← antes decía 4life_auth
+    database: '4life_proyecto',   
     port: 3307
 });
 
