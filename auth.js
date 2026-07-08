@@ -1,8 +1,9 @@
 const express = require('express');
 const mysql = require('mysql2');
+const cors = require('cors');
 const app = express();
 
-// Para que el servidor entienda datos en formato JSON
+app.use(cors());
 app.use(express.json());
 
 // Conexión a la base de datos
@@ -50,7 +51,12 @@ app.post('/login', (req, res) => {
 
         // Si encontramos una fila, las credenciales son correctas
         if (filas.length > 0) {
-            res.send('Autenticación satisfactoria');
+            const usuarioEncontrado = filas[0];
+            res.json({
+                mensaje: 'Autenticación satisfactoria',
+                id_usuario: usuarioEncontrado.id_usuario,
+                rol: usuarioEncontrado.rol
+            });
         } else {
             res.status(401).send('Error en la autenticación');
         }
