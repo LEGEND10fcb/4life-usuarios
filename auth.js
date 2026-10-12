@@ -12,7 +12,7 @@ const conexion = mysql.createConnection({
     user: 'root',
     password: '',
     database: '4life_proyecto',   
-    port: 3307
+    port: 3306
 });
 
 // RUTA 1: REGISTRO DE USUARIO
